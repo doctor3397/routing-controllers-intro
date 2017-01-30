@@ -18,7 +18,7 @@ class PagesController < ApplicationController
     flash[:notice] = "Sorry, the contest has ended"
 
     # redirect_to is a Rails method that takes one string argument representing the URL that you want to redirect (make a new GET request) to
-    redirect_to "/welcome"
+    redirect_to welcome_url
 
   end
 
@@ -34,7 +34,7 @@ class PagesController < ApplicationController
 
   def set_kitten_url
     requested_size = params[:size]
-    @kitten_url = "http://lorempixel.com/#{requested_size}/#{requested_size}/cats"
+    @kitten_url =  "http://lorempixel.com/#{requested_size}/#{requested_size}/cats"
   end
 
   def secrets
@@ -42,7 +42,7 @@ class PagesController < ApplicationController
       render "secrets"
     else
       flash[:alert] = "Sorry, you're not authorized to see that page!"
-      redirect_to "/welcome"
+      redirect_to welcome_url
     end
   end
 
