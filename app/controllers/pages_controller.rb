@@ -12,6 +12,14 @@ class PagesController < ApplicationController
 
   def contest
     @header = "This is the header defiend in the contest method rendered by the application.html.erb"
+
+
+    # Just like params, flash is a hash that Rails manages for you. Its contents get cleared after every request cycle. we use it for storing one-off messages that we want to display to the user.
+    flash[:notice] = "Sorry, the contest has ended"
+
+    # redirect_to is a Rails method that takes one string argument representing the URL that you want to redirect (make a new GET request) to
+    redirect_to "/welcome"
+
   end
 
   def kitten

@@ -8,6 +8,10 @@
   </head>
   <body>
     <header>
+
+      <!-- Any messages stored in flash under the keys :alert or :notice will be displayed at the top of the page.
+
+      Because of the code in our layout, this message will appear to the user at the top of the page after they are redirected. Since flash gets emptied out after every request, if you refresh the page or navigate to a different one, the message will disappear.-->
       <% if flash[:alert] %>
        <p class="alert"><%= flash[:alert] %></p>
       <% end %>
